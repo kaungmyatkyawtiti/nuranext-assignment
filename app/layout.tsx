@@ -4,6 +4,7 @@ import { Space_Grotesk, Orbitron } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Onenex Clone",
@@ -40,6 +41,8 @@ export default function RootLayout({
             <div className="mx-auto px-4 min-h-dvh">
               {children}
             </div>
+
+            <Toaster richColors />
             <Footer />
           </main>
         </Providers>
