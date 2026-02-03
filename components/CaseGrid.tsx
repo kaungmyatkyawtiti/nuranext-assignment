@@ -6,7 +6,7 @@ const CasesGrid = () => {
   return (
     <section className="py-16 px-6 md:px-12 lg:px-16 space-y-15">
       {/* Filter Tabs */}
-      <div className="sticky top-0 z-30 flex gap-12 border-b py-6 overflow-x-auto bg-background">
+      <div className="sticky top-(--header-height) z-90 flex gap-12 border-b py-6 overflow-x-auto bg-background/90 backdrop-blur-lg">
         {['E-COMMERCE [3]', 'WEBSITE [6]', 'APP [3]'].map((tab) => (
           <button
             key={tab}

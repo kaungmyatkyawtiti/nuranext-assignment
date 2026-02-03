@@ -36,6 +36,7 @@
 }
 
 :root {
+  --header-height: 65px;
   --background: oklch(0.9607 0.0133 111.27);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -67,6 +68,7 @@
 }
 
 .dark {
+  --header-height: 65px;
   --background: oklch(0.2448 0.0056 286);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -189,8 +191,8 @@
 }
 
 @layer components {
-  header {
-    @apply absolute top-0 left-0 w-full z-50 px-6 md:px-12 py-3 flex justify-between items-center;
+  #header {
+    @apply fixed top-0 left-0 right-0 w-full z-100 px-6 md:px-12 py-3 flex justify-between items-center bg-background/90 backdrop-blur-lg;
   }
 
   #brand-manifesto {

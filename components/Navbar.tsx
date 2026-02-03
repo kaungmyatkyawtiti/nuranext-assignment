@@ -3,7 +3,6 @@
 import {
   RiMenu2Fill,
   RiCloseLine,
-  RiGithubFill,
 } from "@remixicon/react";
 import Link from "next/link";
 import { useRef, useState } from "react";
