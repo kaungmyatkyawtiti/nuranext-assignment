@@ -12,9 +12,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-footer-background px-6 py-12 md:px-16 lg:px-24 border-t">
+    <footer>
       {/* Top Description */}
-      <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
+      <div className="footer-desc">
         <h2 className="title">
           We are your partner for <br /> innovation & growth
         </h2>
@@ -55,7 +55,7 @@ const Footer = () => {
       </div>
 
       {/* Branding and Copyright */}
-      <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t gap-4">
+      <div className="footer-copyright">
         <Logo />
         <div className="text-xs uppercase text-secondary-blue dark:text-white/85 font-semibold">
           ONENEX © COPYRIGHT {currentYear}. ALL RIGHT RESERVED.

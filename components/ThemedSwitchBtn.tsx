@@ -3,7 +3,7 @@ import { RiMoonClearLine, RiSunLine } from "@remixicon/react";
 function ThemeSwitchBtn() {
   return (
     <button
-      className="theme-switch-btn"
+      className="theme-switch"
     >
       {/* when theme is dark, hide this */}
       <RiMoonClearLine

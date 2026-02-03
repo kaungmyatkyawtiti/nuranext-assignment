@@ -28,7 +28,7 @@ export default function ModeToggle() {
     <button
       onClick={handleSwitch}
       type="button"
-      className="theme-switch-btn"
+      className="theme-switch"
     >
       <RiMoonClearLine
         size={20}

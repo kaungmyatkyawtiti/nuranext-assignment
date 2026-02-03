@@ -74,9 +74,9 @@ export default function ContactForm() {
     <form
       id="contact-form"
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-8"
+      className="space-y-7"
     >
-      <div className="flex flex-col gap-2 w-full">
+      <div className="contact-group">
         <input
           {...register("name")}
           placeholder="Name"
@@ -90,7 +90,7 @@ export default function ContactForm() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 w-full">
+      <div className="contact-group">
         <input
           {...register("bussiness")}
           placeholder="Bussiness (OPTIONAL)"
@@ -104,7 +104,7 @@ export default function ContactForm() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 w-full">
+      <div className="contact-group">
         <input
           {...register("phone")}
           placeholder="Phone"
@@ -118,7 +118,7 @@ export default function ContactForm() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 w-full">
+      <div className="contact-group">
         <input
           type="email"
           {...register("email")}
@@ -133,7 +133,7 @@ export default function ContactForm() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="contact-group">
         <textarea
           {...register("about")}
           placeholder="Tell us about your project..."

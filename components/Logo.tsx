@@ -9,7 +9,7 @@ export default function Logo({
 }: LogoProps) {
   return (
     <div className={cn(
-      "text-3xl tracking-tighter text-brand-blue font-orbitron",
+      "text-3xl tracking-tighter text-brand font-orbitron",
       className
     )}>
       onenex

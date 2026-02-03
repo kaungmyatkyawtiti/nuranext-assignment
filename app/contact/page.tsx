@@ -9,7 +9,7 @@ export default function ContactPage() {
         <div className="flex flex-col justify-between space-y-12">
           <div>
             <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8">
-              {`Let's`} <br /> <span className="text-brand-blue dark:text-brand-blue-foreground">Connect.</span>
+              {`Let's`} <br /> <span className="text-brand-primary">Connect.</span>
             </h1>
             <p className="text-2xl text-foreground/80 max-w-md leading-relaxed">
               {`We're ready if you are.Let's get to it`}

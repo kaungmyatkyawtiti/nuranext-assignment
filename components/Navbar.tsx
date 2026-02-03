@@ -31,10 +31,10 @@ export default function Navbar() {
             <li key={link.label} className="relative">
               <Link
                 href={link.href}
-                className="text-brand-blue text-sm font-semibold uppercase group"
+                className="text-brand/85 hover:text-brand text-sm font-semibold uppercase group"
               >
                 {link.label}
-                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-brand-blue group-hover:w-full hover-effect" />
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-brand group-hover:w-full hover-effect" />
               </Link>
             </li>
           ))}
@@ -61,9 +61,7 @@ export default function Navbar() {
         </button>
 
         {isOpen && (
-          <div
-            className="absolute md:hidden right-0 top-12 z-50 w-50 border bg-stone-100 dark:bg-stone-700 shadow-md rounded-md"
-          >
+          <div className="absolute md:hidden right-0 top-12 z-50 w-50 border bg-stone-100 dark:bg-stone-700 shadow-md rounded-md">
             <ul className="py-1 font-medium">
               {NAV_LINKS.map(link => (
                 <Link
@@ -71,7 +69,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={handleClose}
                 >
-                  <li className="block px-4 py-2 hover:bg-input hover:underline text-brand-blue font-[550]">
+                  <li className="block px-4 py-2 hover:bg-input hover:underline text-brand/85 hover:text-brand font-semibold">
                     {link.label}
                   </li>
                 </Link>
