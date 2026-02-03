@@ -18,7 +18,7 @@ const Footer = () => {
         <h2 className="title">
           We are your partner for <br /> innovation & growth
         </h2>
-        <button className="primary-btn border text-brand-blue hover:bg-brand-blue hover:text-brand-blue-foreground">
+        <button className="primary-btn">
           GET IN TOUCH
           <RiArrowRightLongLine size={22} />
         </button>
