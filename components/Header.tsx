@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       {/* Logo */}
-      <Logo />
+      <Logo className="text-[1.7rem]" />
 
       {/* Navbar */}
       <Navbar />

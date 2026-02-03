@@ -15,7 +15,7 @@ const Footer = () => {
     <footer>
       {/* Top Description */}
       <div className="footer-desc">
-        <h2 className="text-[clamp(2rem,6vw,3.75rem)] font-bold uppercase leading-tight text-primary-blue dark:text-white">
+        <h2 className="text-[clamp(1.5rem,6vw,3.75rem)] font-bold uppercase leading-tight text-primary-blue dark:text-white">
           We are your partner for <br /> innovation & growth
         </h2>
         <button className="primary-btn w-auto">
