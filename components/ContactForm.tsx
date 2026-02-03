@@ -74,7 +74,7 @@ export default function ContactForm() {
     <form
       id="contact-form"
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-7"
+      className="space-y-6"
     >
       <div className="contact-group">
         <input
@@ -148,7 +148,7 @@ export default function ContactForm() {
       </div>
 
       <button
-        className="primary-btn px-4 py-3"
+        className="primary-btn"
         type="submit"
         form="contact-form"
       >

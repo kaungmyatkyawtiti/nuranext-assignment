@@ -2,19 +2,16 @@ import ContactForm from "@/components/ContactForm";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen p-8 md:p-24">
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
-
+    <main className="min-h-screen px-8 md:px-12 lg:px-20 col-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 w-full">
         {/* Left side: Contact Description */}
-        <div className="flex flex-col justify-between space-y-12">
-          <div>
-            <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8">
-              {`Let's`} <br /> <span className="text-brand-primary">Connect.</span>
-            </h1>
-            <p className="text-2xl text-foreground/80 max-w-md leading-relaxed">
-              {`We're ready if you are.Let's get to it`}
-            </p>
-          </div>
+        <div>
+          <h1 className="text-[clamp(2.2rem,6vw,50px)] font-bold leading-tight mb-4">
+            {`Let's`} <span className="text-brand-primary">Connect.</span>
+          </h1>
+          <p className="text-[clamp(16px,4vw,1.2rem)] text-foreground/80 max-w-md leading-relaxed">
+            {`We're ready if you are.Let's get to it`}
+          </p>
         </div>
 
         {/* Right Side: Contact Form */}

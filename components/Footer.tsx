@@ -15,52 +15,49 @@ const Footer = () => {
     <footer>
       {/* Top Description */}
       <div className="footer-desc">
-        <h2 className="title">
+        <h2 className="text-[clamp(2rem,6vw,3.75rem)] font-bold uppercase leading-tight text-primary-blue dark:text-white">
           We are your partner for <br /> innovation & growth
         </h2>
-        <button className="primary-btn">
+        <button className="primary-btn w-auto">
           GET IN TOUCH
           <RiArrowRightLongLine size={22} />
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-        <FooterColumn
-          title={"We Onenex"}
-          links={WE_ONENEX_LINKS}
-        />
+      <div className="w-full">
+        {/* Scrollable grid */}
+        <div className="footer-grid">
+          <FooterColumn title="We Onenex" links={WE_ONENEX_LINKS} />
+          <FooterColumn title="We Offer" links={WE_OFFER_LINKS} />
 
-        <FooterColumn
-          title={"We Offer"}
-          links={WE_OFFER_LINKS}
-        />
+          <div>
+            <h4 className="footer-subtitle">Follow Us</h4>
+            <div className="flex gap-2">
+              {SOCIALS_LINKS.map(link => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="social-link"
+                >
+                  <link.Icon size={20} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
 
-        <div>
-          <h4 className="footer-subtitle">Follow Us</h4>
-          <div className="flex gap-2">
-            {SOCIALS_LINKS.map(link => (
-              <Link
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-                className="social-link"
-              >
-                <link.Icon size={20} />
-              </Link>
-            ))}
+        {/* Branding and Copyright */}
+        <div className="footer-copyright">
+          <Logo />
+          <div className="text-xs uppercase text-secondary-blue dark:text-white/85 font-semibold">
+            ONENEX © COPYRIGHT {currentYear}. ALL RIGHT RESERVED.
           </div>
         </div>
       </div>
 
-      {/* Branding and Copyright */}
-      <div className="footer-copyright">
-        <Logo />
-        <div className="text-xs uppercase text-secondary-blue dark:text-white/85 font-semibold">
-          ONENEX © COPYRIGHT {currentYear}. ALL RIGHT RESERVED.
-        </div>
-      </div>
     </footer>
   );
 };
