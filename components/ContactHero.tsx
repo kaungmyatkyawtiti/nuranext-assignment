@@ -1,5 +1,4 @@
-import { RiArrowRightLongLine } from "@remixicon/react";
-import Link from "next/link";
+import ContactCTA from "./ContactCTA";
 
 const ContactHero = () => {
   return (
@@ -13,13 +12,7 @@ const ContactHero = () => {
           {`Let's talk about`} <br /> your project.
         </h1>
 
-        <Link
-          href={"/contact"}
-          className="primary-btn mt-10"
-        >
-          GET IN TOUCH
-          <RiArrowRightLongLine />
-        </Link>
+        <ContactCTA />
       </div>
     </section>
   );

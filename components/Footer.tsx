@@ -3,10 +3,10 @@ import {
   WE_OFFER_LINKS,
   WE_ONENEX_LINKS
 } from "@/constants";
-import { RiArrowRightLongLine } from "@remixicon/react";
 import Link from "next/link";
 import FooterColumn from "./FooterColumn";
 import Logo from "./Logo";
+import ContactCTA from "./ContactCTA";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,10 +18,8 @@ const Footer = () => {
         <h2 className="text-[clamp(1.5rem,6vw,3.75rem)] font-bold uppercase leading-tight text-primary-blue dark:text-white">
           We are your partner for <br /> innovation & growth
         </h2>
-        <button className="primary-btn w-auto">
-          GET IN TOUCH
-          <RiArrowRightLongLine size={22} />
-        </button>
+
+        <ContactCTA className="w-auto" />
       </div>
 
       <div className="w-full">

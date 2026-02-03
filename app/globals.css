@@ -181,6 +181,12 @@
   @apply text-destructive ml-0.5 mt-1 text-[14px] whitespace-nowrap overflow-x-auto;
 }
 
+@utility fancy-title {
+  @apply shrink-0 font-bold uppercase text-transparent leading-none;
+
+  -webkit-text-stroke: 1px var(--brand-primary);
+  opacity: 0.6;
+}
 
 @layer components {
   header {

@@ -10,16 +10,16 @@ const BrandManifesto = () => {
 
         {/* Scrolling text row */}
         <div className="flex-center gap-4 md:gap-8 my-8 md:my-16 w-full overflow-visible whitespace-nowrap">
-          <span className="shrink-0 text-[clamp(2rem,6vw,4.2rem)] font-bold uppercase tracking-tighter text-transparent manifesto-stroke-text">
+          <h2 className="fancy-title text-[clamp(2rem,6vw,4.2rem)] tracking-tighter">
             STUDIES
-          </span>
+          </h2>
           <div className="shrink-0 h-0.5 w-12 md:w-48 bg-brand-primary"></div>
-          <span className="shrink-0 text-[clamp(2rem,6vw,4.2rem)] font-bold uppercase tracking-tighter text-brand-primary">
+          <h2 className="shrink-0 text-[clamp(2rem,6vw,4.2rem)] font-bold uppercase tracking-tighter text-brand-primary">
             CASE
-          </span>
-          <span className="shrink-0 text-[clamp(2rem,6vw,4.2rem)] font-bold uppercase tracking-tighter text-transparent manifesto-stroke-text">
+          </h2>
+          <h2 className="fancy-title text-[clamp(2rem,6vw,4.2rem)] tracking-tighter">
             STUDIES
-          </span>
+          </h2>
         </div>
 
         {/* Subtext */}
