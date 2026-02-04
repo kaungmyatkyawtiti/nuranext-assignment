@@ -1,8 +1,14 @@
+import ContactHero from "@/components/ContactHero";
+import Hero from "@/components/Hero";
+import LatestWork from "@/components/LatestWork";
+
 export default function ServicesPage() {
   return (
-    <div>
-      Services
-    </div>
+    <>
+      <Hero />
+      <LatestWork />
+      <ContactHero />
+    </>
   )
 }
 
