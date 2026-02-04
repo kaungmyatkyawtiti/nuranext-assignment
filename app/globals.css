@@ -216,7 +216,7 @@
     @apply fixed inset-0 z-0 h-dvh bg-footer-background px-6 py-12 md:px-14 lg:px-24 col-center gap-12;
 
     .footer-desc {
-      @apply flex flex-col justify-between items-center xl:flex-row text-center xl:text-start gap-6 md:gap-10 w-full;
+      @apply flex flex-col justify-between items-center xl:flex-row text-center xl:text-start gap-3 md:gap-8 w-full;
 
       h2 {
         @apply text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-tight text-primary-blue dark:text-white;
