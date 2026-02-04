@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 import { useDismiss } from "@/hooks/use-dismiss";
 import { cn } from "@/lib/utils";
 import ModeToggle from "./ModeToggle";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,23 +60,32 @@ export default function Navbar() {
           )}
         </button>
 
-        {isOpen && (
-          <div className="absolute md:hidden right-0 top-12 z-50 w-50 border bg-stone-100 dark:bg-stone-700 shadow-md rounded-md">
-            <ul className="py-1 font-medium">
-              {NAV_LINKS.map(link => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={handleClose}
-                >
-                  <li className="block px-4 py-2 hover:bg-input hover:underline text-brand/85 hover:text-brand font-semibold">
-                    {link.label}
-                  </li>
-                </Link>
-              ))}
-            </ul>
-          </div>
-        )}
+        <AnimatePresence initial={false} mode="popLayout">
+          {isOpen && (
+            <motion.div
+              key="mobile-menu"
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="absolute md:hidden right-0 top-12 z-50 w-50 border bg-stone-100 dark:bg-stone-700 shadow-md rounded-md"
+            >
+              <ul className="py-1 font-medium">
+                {NAV_LINKS.map(link => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={handleClose}
+                  >
+                    <li className="block px-4 py-2 hover:bg-input hover:underline text-brand/85 hover:text-brand font-semibold">
+                      {link.label}
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       <ModeToggle />
