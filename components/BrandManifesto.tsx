@@ -1,7 +1,9 @@
 const BrandManifesto = () => {
   return (
-    <section id="brand-manifesto">
-      <div className="manifesto-container">
+    <section
+      className="relative min-h-screen flex flex-col justify-center items-start px-6 md:px-16 lg:px-24 overflow-hidden select-none"
+    >
+      <div className="relative z-10 w-full max-w-7xl mx-auto">
         {/* Main heading */}
         <h1 className="text-[clamp(2rem,4.5vw,4.5rem)] font-medium tracking-tight text-brand-foreground leading-tight md:leading-[1.1]">
           We are in the business of building <br className="hidden md:block" />

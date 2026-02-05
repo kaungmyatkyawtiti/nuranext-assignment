@@ -1,4 +1,7 @@
+import ScrambleText from "./animations/ScrambleText";
 import ContactCTA from "./ContactCTA";
+
+const text = "Let's talk about\nyour project"
 
 const ContactHero = () => {
   return (
@@ -8,9 +11,10 @@ const ContactHero = () => {
           Seeking partners in change?
         </h4>
 
-        <h1 className="text-5xl md:text-7xl font-semibold text-brand-primary leading-tight max-w-5xl">
-          {`Let's talk about`} <br /> your project.
-        </h1>
+        <ScrambleText
+          className="text-5xl md:text-7xl font-semibold text-brand-primary leading-tight max-w-5xl"
+          text={text}
+        />
 
         <ContactCTA />
       </div>
