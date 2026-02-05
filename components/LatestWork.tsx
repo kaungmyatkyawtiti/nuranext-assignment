@@ -1,71 +1,50 @@
-import React from 'react';
-import { ArrowUpRight } from 'lucide-react'; // Using lucide-react for the arrows
+import { DUMMY_LATEST } from '@/constants';
+import { RiArrowLeftUpFill } from '@remixicon/react';
+import Image from "next/image"
+import ScrambleText from './animations/ScrambleText';
 
-interface CaseStudy {
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-}
+const text = "THE LATEST";
 
-const cases: CaseStudy[] = [
-  {
-    title: "TOYOTA MYANMAR",
-    description: "Digital Transformation of Manual Delays to Instant Approvals",
-    image: "/api/placeholder/600/400", // Replace with your Toyota image
-    category: "TOYOTA MYANMAR"
-  },
-  {
-    title: "A BANK",
-    description: "Creating An Intuitive Banking Experience",
-    image: "/api/placeholder/600/400", // Replace with your A Bank image
-    category: "A BANK"
-  },
-  {
-    title: "THE GOOD LIFE",
-    description: "The Goodlife Website: A Digital Content Hub to Inspire Modern Lifestyles",
-    image: "/api/placeholder/600/400", // Replace with your Good Life image
-    category: "THE GOOD LIFE"
-  }
-];
-
-const LatestWork: React.FC = () => {
+const LatestWork = () => {
   return (
-    <section className="w-full py-24 px-6 md:px-12">
+    <section className="w-full py-24 px-8 sm:px-16 bg-gradient-violet">
       <div className="mx-auto max-w-7xl">
-
-        {/* Outlined Header */}
-        <div className="mb-20 text-center">
-          <h2 className="fancy-title text-[clamp(2rem,8vw,5rem)] tracking-wider">
-            THE LATEST
-          </h2>
+        <div className="mb-16 text-center">
+          <ScrambleText
+            className="text-[clamp(2rem,8vw,5rem)] font-bold text-stone-100"
+            text={text}
+          />
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {cases.map((item, index) => (
-            <div key={index} className="group cursor-pointer flex flex-col bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {DUMMY_LATEST.map((item) => (
+            <div
+              key={item.id}
+              className="group cursor-pointer flex flex-col bg-stone-100"
+            >
 
               {/* Image Container */}
-              <div className="aspect-4/3 overflow-hidden bg-gray-200">
-                <img
+              <div className="aspect-4/3 overflow-hidden bg-gray-200 relative">
+                <Image
                   src={item.image}
                   alt={item.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
               {/* Content Area */}
-              <div className="flex flex-col p-6 space-y-4 min-h-[180px]">
+              <div className="flex flex-col p-5 space-y-4 min-h-40">
                 <div className="flex items-center space-x-2">
-                  <ArrowUpRight className="w-5 h-5 text-cyan-500" />
-                  <span className="text-sm font-bold tracking-wider text-cyan-500">
-                    {item.category}
+                  <RiArrowLeftUpFill size={30} className="text-primary-blue" />
+                  <span className="text-lg font-bold tracking-wider text-primary-blue">
+                    {item.client}
                   </span>
                 </div>
 
-                <p className="text-lg font-medium leading-snug text-gray-800">
-                  {item.description}
+                <p className="text-base font-medium leading-snug text-black/80">
+                  {item.title}
                 </p>
               </div>
             </div>
