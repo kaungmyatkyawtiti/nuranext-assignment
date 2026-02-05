@@ -6,3 +6,9 @@ export interface Project {
   image: string;
   color: string;
 }
+
+export interface ServiceItem {
+  category: string;
+  description: string;
+  details: string[];
+}

@@ -1,4 +1,4 @@
-import { Project } from "@/types";
+import { Project, ServiceItem } from "@/types";
 import { RiFacebookCircleFill, RiInstagramLine, RiLinkedinBoxFill, RiYoutubeLine } from "@remixicon/react";
 
 export const NAV_LINKS = [
@@ -111,3 +111,68 @@ export const DUMMY_PROJECTS: Project[] = [
   },
 ];
 
+export const SERVICES: ServiceItem[] = [
+  {
+    category: "Branding",
+    description: "Figuring out who you are and what you're really about. We help come up with a branding creative that tells your story.",
+    details: [
+      "Findings & Opportunities",
+      "Brand Strategy",
+      "Identity Development",
+      "Digital Collateral",
+      "Brand Guidelines"
+    ]
+  },
+  {
+    category: "Discovery",
+    description: "We uncover insights and design products through a process of exploration to achieve user-centric products.",
+    details: ["User Research", "Market Analysis", "Product Strategy"]
+  },
+  {
+    category: "Digital Experiences",
+    description: "We help build digital products and solutions that enhance consumer's lives and help them navigate better.",
+    details: [
+      "Marketing Websites",
+      "Digital Products",
+      "Mobile Apps",
+      "Design Systems"
+    ]
+  },
+  {
+    category: "ENGINEERING",
+    description: "We build products based upon modern technologies and lean approaches.",
+    details: [
+      "Front-end Development",
+      "Website Development",
+      "Product Development",
+      "Cloud Engineering & Dev Ops"
+    ]
+  }
+];
+
+export const DUMMY_LATEST: Project[] = [
+  {
+    id: 1,
+    category: 'App',
+    title: 'Synpitarn Pico-Finance Platform',
+    client: 'SYNPITARN',
+    image: '/pico.jpg',
+    color: 'bg-[#EAE8E4]'
+  },
+  {
+    id: 2,
+    category: 'Website',
+    title: 'The Goodlife Website: A Digital Content Hub',
+    client: 'THE GOODLIFE',
+    image: '/goodlife.jpg',
+    color: 'bg-[#634CC9]'
+  },
+  {
+    id: 3,
+    category: 'App',
+    title: 'Creating An Intuitive Banking Experience',
+    client: 'A BANK',
+    image: '/abank.jpg',
+    color: 'bg-[#5039B5]'
+  },
+]
