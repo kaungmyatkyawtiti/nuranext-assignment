@@ -32,6 +32,7 @@
 
   --color-primary-blue: var(--primary-blue);
   --color-secondary-blue: var(--secondary-blue);
+  --color-primary-pink: var(--primary-pink);
   --color-footer-background: var(--footer-background);
 
   --color-gradient-pink: var(--gradient-pink);
@@ -39,7 +40,6 @@
 }
 
 :root {
-  --header-height: 65px;
   --background: oklch(0.9607 0.0133 111.27);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -67,6 +67,7 @@
 
   --primary-blue: oklch(0.514 0.195 274.51);
   --secondary-blue: oklch(0.552 0.1279 274.16);
+  --primary-pink: oklch(0.6558 0.2404 354.32);
   --footer-background: oklch(1 0 0);
 
   --gradient-pink: oklch(0.85 0.12 305);
@@ -74,8 +75,7 @@
 }
 
 .dark {
-  --header-height: 65px;
-  --background: oklch(0.2448 0.0056 286);
+  --background: oklch(21% 0.034 264.665);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -102,6 +102,7 @@
 
   --primary-blue: oklch(0.514 0.195 274.51);
   --secondary-blue: oklch(0.552 0.1279 274.16);
+  --primary-pink: oklch(0.71 0.2 341.27);
   --footer-background: oklch(0.5273 0.2333 283.88);
 
   --gradient-pink: oklch(0.45 0.15 305);
@@ -124,6 +125,7 @@
     overflow-wrap: break-word;
     background-color: var(--background);
     color: var(--foreground);
+    position: relative;
   }
 
   input:-webkit-autofill,
@@ -140,11 +142,11 @@
   }
 
   header {
-    @apply fixed top-0 left-0 right-0 w-full z-100 px-6 md:px-12 py-3 flex justify-between items-center bg-background/90 backdrop-blur-lg;
+    @apply sticky top-0 w-full z-100 bg-background/90 backdrop-blur-lg;
   }
 
   footer {
-    @apply fixed inset-0 z-0 h-dvh bg-footer-background px-6 py-12 md:px-14 lg:px-24 col-center gap-12;
+    @apply fixed inset-0 z-0 min-h-screen bg-footer-background px-6 py-20;
   }
 }
 
@@ -177,7 +179,7 @@
 }
 
 @utility contact-group {
-  @apply w-full flex flex-col text-sm lg:text-base;
+  @apply w-full flex flex-col text-sm lg:text-base relative;
 }
 
 @utility contact-input {
@@ -196,18 +198,18 @@
   }
 }
 
-@utility contact-error {
-  @apply text-destructive ml-0.5 mt-1 text-[14px] whitespace-nowrap overflow-x-auto;
+@utility error-tooltip {
+  @apply absolute right-0 top-full mt-1.5 px-3 py-1 rounded-md bg-destructive text-white text-xs shadow-lg z-50 whitespace-nowrap overflow-x-auto;
 }
 
 @utility fancy-title {
-  @apply shrink-0 font-bold uppercase text-transparent leading-none opacity-60;
+  @apply shrink-0 font-extrabold uppercase text-transparent leading-none opacity-60;
 
   -webkit-text-stroke: 1px var(--brand-primary);
 }
 
 @utility main-content {
-  @apply relative z-10 bg-background mb-[100dvh] py-6;
+  @apply relative z-10 bg-background mb-[100vh];
 }
 
 @utility footer-subtitle {

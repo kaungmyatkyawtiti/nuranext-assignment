@@ -27,17 +27,31 @@ export default function Navbar() {
       {/* Desktop view */}
       <div className="hidden md:block">
         <ul className="flex gap-8">
-          {NAV_LINKS.map(link => (
-            <li key={link.label} className="relative">
-              <Link
-                href={link.href}
-                className="text-brand/85 hover:text-brand text-sm font-semibold uppercase group"
-              >
-                {link.label}
-                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-brand group-hover:w-full hover-effect" />
-              </Link>
-            </li>
-          ))}
+          {NAV_LINKS.map(link => {
+            const isActive =
+              pathname === link.href ||
+              pathname.startsWith(`${link.href}/`)
+
+            return (
+              <li key={link.label} className="relative">
+                <Link
+                  href={link.href}
+                  className={cn(
+                    "text-brand/85 hover:text-brand text-sm font-semibold uppercase hover-effect",
+                    isActive && "text-brand"
+                  )}
+                >
+                  {link.label}
+                  <span
+                    className={cn(
+                      "absolute left-0 -bottom-1.5 h-1 w-0 bg-primary-pink",
+                      isActive && "w-full"
+                    )}
+                  />
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </div>
 
@@ -68,7 +82,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="absolute md:hidden right-0 top-12 z-50 w-50 border bg-stone-100 dark:bg-stone-700 shadow-md rounded-md"
+              className="absolute md:hidden right-0 top-12 z-50 w-50 border bg-stone-100 dark:bg-gray-700 shadow-md rounded-md"
             >
               <ul className="py-1 font-medium">
                 {NAV_LINKS.map(link => (

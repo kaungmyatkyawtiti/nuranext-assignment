@@ -14,20 +14,17 @@ const Footer = () => {
 
   return (
     <footer>
-      {/* Top Description */}
-      <div
-        className="flex flex-col justify-between items-center xl:flex-row text-center xl:text-start gap-2 w-full"
-      >
-        <h2 className="text-[clamp(1.6rem,5vw,3.75rem)] font-bold uppercase leading-tight text-primary-blue dark:text-white">
-          We are your partner for <br /> innovation & growth
-        </h2>
+      <div className="max-w-7xl mx-auto space-y-8">
+        {/* Top Description */}
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
+          <h2 className="text-[clamp(24px,4vw,3.6rem)] font-bold uppercase leading-tight text-primary-blue dark:text-white">
+            We are your partner for <br /> innovation & growth
+          </h2>
+          <ContactCTA />
+        </div>
 
-        <ContactCTA className="w-auto" />
-      </div>
-
-      <div className="w-full">
         {/* Scrollable grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 max-h-[40dvh] overflow-y-auto md:max-h-none md:overflow-visible">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 max-h-[40vh] overflow-y-auto md:max-h-none md:overflow-visible">
           <FooterColumn title="We Onenex" links={WE_ONENEX_LINKS} />
           <FooterColumn title="We Offer" links={WE_OFFER_LINKS} />
 
@@ -61,7 +58,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
     </footer>
   );
 };

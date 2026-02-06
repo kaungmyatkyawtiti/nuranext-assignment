@@ -1,25 +1,16 @@
 "use client";
 
-import * as motion from "motion/react-client";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { RiArrowRightLongLine } from "@remixicon/react";
+import InteractiveBtn from "./animations/InteractiveBtn";
 
-interface ContactCTAProps {
-  className?: string;
-}
-
-export default function ContactCTA({ className }: ContactCTAProps) {
+export default function ContactCTA() {
   return (
-    <Link href="/contact" className="inline-block">
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        className={cn("primary-btn mt-10 inline-flex items-center gap-2", className)}
-      >
+    <Link href="/contact">
+      <InteractiveBtn>
         GET IN TOUCH
         <RiArrowRightLongLine />
-      </motion.button>
-    </Link>
+      </InteractiveBtn>
+    </Link >
   );
 }

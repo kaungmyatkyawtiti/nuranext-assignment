@@ -7,6 +7,9 @@ import { RiSendPlaneFill } from "@remixicon/react";
 import { cn } from "@/lib/utils";
 import { sendEmail } from "@/lib/actions/contact-email";
 import { toast } from "sonner";
+import InteractiveBtn from "./animations/InteractiveBtn";
+import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
 
 
 const contactSchema = z.object({
@@ -44,6 +47,8 @@ const defaultValues = {
 }
 
 export default function ContactForm() {
+  const [shakeTrigger, setShakeTrigger] = useState(0);
+
   const {
     register,
     handleSubmit,
@@ -73,7 +78,10 @@ export default function ContactForm() {
   return (
     <form
       id="contact-form"
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(
+        onSubmit,
+        () => { setShakeTrigger((prev) => prev + 1) }
+      )}
       className="space-y-6"
     >
       <div className="contact-group">
@@ -85,9 +93,11 @@ export default function ContactForm() {
             errors.name && "error"
           )}
         />
-        <p className="contact-error">
-          {errors.name?.message}
-        </p>
+
+        <ErrorTooltip
+          error={errors.name?.message}
+          shakeTrigger={shakeTrigger}
+        />
       </div>
 
       <div className="contact-group">
@@ -99,9 +109,11 @@ export default function ContactForm() {
             errors.bussiness && "error"
           )}
         />
-        <p className="contact-error">
-          {errors.bussiness?.message}
-        </p>
+
+        <ErrorTooltip
+          error={errors.bussiness?.message}
+          shakeTrigger={shakeTrigger}
+        />
       </div>
 
       <div className="contact-group">
@@ -113,9 +125,11 @@ export default function ContactForm() {
             errors.phone && "error"
           )}
         />
-        <p className="contact-error">
-          {errors.phone?.message}
-        </p>
+
+        <ErrorTooltip
+          error={errors.phone?.message}
+          shakeTrigger={shakeTrigger}
+        />
       </div>
 
       <div className="contact-group">
@@ -128,9 +142,11 @@ export default function ContactForm() {
             errors.email && "error"
           )}
         />
-        <p className="contact-error">
-          {errors.email?.message}
-        </p>
+
+        <ErrorTooltip
+          error={errors.email?.message}
+          shakeTrigger={shakeTrigger}
+        />
       </div>
 
       <div className="contact-group">
@@ -142,19 +158,56 @@ export default function ContactForm() {
             errors.about && "error"
           )}
         />
-        <p className="contact-error">
-          {errors.about?.message}
-        </p>
+
+        <ErrorTooltip
+          error={errors.about?.message}
+          shakeTrigger={shakeTrigger}
+        />
       </div>
 
-      <button
-        className="primary-btn"
+      <InteractiveBtn
         type="submit"
         form="contact-form"
+        className="mt-8"
       >
         Send
         <RiSendPlaneFill size={20} />
-      </button>
+      </InteractiveBtn>
     </form>
   )
+}
+
+interface ErrorTooltipProps {
+  error?: string;
+  shakeTrigger: number;
+}
+
+function ErrorTooltip({
+  error,
+  shakeTrigger
+}: ErrorTooltipProps) {
+  return (
+    <AnimatePresence
+      initial={false}
+      mode="popLayout"
+    >
+      {error && (
+        <motion.span
+          key={shakeTrigger}
+          className="error-tooltip"
+          initial={{ opacity: 0, y: -4 }}
+          animate={{
+            opacity: 1,
+            x: [0, -4, 4, -3, 3, -2, 2, 0],
+          }}
+          exit={{ opacity: 0 }}
+          transition={{
+            duration: 0.35,
+            ease: "easeInOut",
+          }}
+        >
+          {error}
+        </motion.span>)}
+    </AnimatePresence>
+  );
 }

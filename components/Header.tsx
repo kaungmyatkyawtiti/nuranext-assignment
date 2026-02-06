@@ -1,16 +1,17 @@
 "use client"
 
 import { motion, useScroll, useMotionValueEvent } from "motion/react"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import Logo from './Logo';
 import Navbar from './Navbar';
 
-const HEADER_HEIGHT = 65
-
 const Header = () => {
+  const headerRef = useRef<HTMLElement>(null);
+
   const { scrollY } = useScroll()
   const [hidden, setHidden] = useState(false)
+  const [headerHeight, setHeaderHeight] = useState(0);
 
   useMotionValueEvent(scrollY, "change", (current) => {
     const previous = scrollY.getPrevious() ?? 0;
@@ -24,25 +25,47 @@ const Header = () => {
   })
 
   useEffect(() => {
-    document.documentElement.style.setProperty(
-      "--header-height",
-      hidden ? "0px" : `${HEADER_HEIGHT}px`
-    )
-  }, [hidden])
+    if (headerRef.current) {
+      const height = headerRef.current.offsetHeight;
+      setHeaderHeight(height);
+
+      document.documentElement.style.setProperty(
+        "--header-height",
+        hidden ? "0px" : `${height}px`
+      );
+    }
+  }, [hidden]);
+
+  // Resizing
+  // useEffect(() => {
+  //   const updateHeight = () => {
+  //     if (headerRef.current) {
+  //       setHeaderHeight(headerRef.current.offsetHeight);
+  //     }
+  //   };
+  //
+  //   window.addEventListener("resize", updateHeight);
+  //   updateHeight();
+  //
+  //   return () => window.removeEventListener("resize", updateHeight);
+  // }, []);
 
   return (
     <motion.header
+      ref={headerRef}
       animate={{
-        y: hidden ? -HEADER_HEIGHT : 0,
+        y: hidden ? -headerHeight : 0,
         opacity: hidden ? 0 : 1,
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      {/* Logo */}
-      <Logo className="text-[1.7rem]" />
+      <div className="flex items-center justify-between max-w-7xl mx-auto py-2 px-4">
+        {/* Logo */}
+        <Logo className="text-[1.7rem]" />
 
-      {/* Navbar */}
-      <Navbar />
+        {/* Navbar */}
+        <Navbar />
+      </div>
     </motion.header>
   );
 };

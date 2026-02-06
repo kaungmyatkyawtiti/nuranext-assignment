@@ -1,23 +1,23 @@
 import ScrambleText from "./animations/ScrambleText";
 import ContactCTA from "./ContactCTA";
 
-const text = "Let's talk about\nyour project"
+const text = "Let's talk about \n your project"
 
 const ContactHero = () => {
   return (
-    <section className="min-h-dvh flex flex-col">
-      <div className="grow flex flex-col justify-center items-center text-center px-4 gap-8">
-        <h4 className="text-xl font-semibold uppercase text-foreground/80">
+    <section className="min-h-screen col-center px-4 py-20">
+      <div className="max-w-7xl gap-10 text-center space-y-4 mb-14">
+        <h4 className="text-lg md:text-xl font-semibold uppercase text-foreground/80">
           Seeking partners in change?
         </h4>
 
         <ScrambleText
-          className="text-5xl md:text-7xl font-semibold text-brand-primary leading-tight max-w-5xl"
+          className="text-[clamp(2rem,6vw,4rem)] font-semibold text-brand-primary leading-tight"
           text={text}
         />
-
-        <ContactCTA />
       </div>
+
+      <ContactCTA />
     </section>
   );
 };

@@ -6,24 +6,22 @@ const para2 = "This is where we start. Your digital product big or small should 
 
 export default function AttentionToDetail() {
   return (
-    <section className="relative px-8 md:px-16 lg:px-24 min-h-dvh">
+    <section className="min-h-[90vh] px-6 py-20">
       <div className="mx-auto max-w-7xl space-y-35 md:space-y-45">
         {/* Top: Focus on Attention to Detail */}
         <div>
           <FadeInText para={para1}
-            className="text-[clamp(1.4rem,4vw,2.6rem)] font-semibold leading-tight text-cyan-600 dark:text-violet-500"
+            className="text-[clamp(24px,4vw,2.5rem)] font-semibold leading-tight text-brand-primary dark:text-primary-pink"
           />
         </div>
 
         {/* Bottom: Mission Statement */}
-        <div className="flex justify-end text-right">
+        <div className="flex md:justify-end md:text-right">
           <FadeInText para={para2}
-            className="text-[clamp(1.4rem,4vw,2.6rem)] font-semibold leading-tight text-violet-600 dark:text-cyan-500"
+            className="text-[clamp(24px,4vw,2.5rem)] font-semibold leading-tight text-primary-pink dark:text-brand-primary"
           />
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-160 h-80 bg-cyan-500/30 blur-[120px] rounded-full pointer-events-none" />
     </section>
   )
 }

@@ -4,16 +4,17 @@ const para = "We don't just build website.\nWe help build digital products funct
 
 export default function WhatWeDo() {
   return (
-    <section className="min-h-dvh px-8 md:px-16 lg:px-24">
-      <div className="mx-auto grid grid-cols-1 gap-14 lg:grid-cols-2 items-center max-w-7xl">
+    <section className="min-h-screen px-6 py-20">
+      <div className="mx-auto max-w-7xl grid grid-cols-1 gap-14 lg:grid-cols-2 items-center">
         {/* Left: primary messaging */}
         <div className="space-y-6 md:space-y-8">
           <h3 className="text-base md:text-lg font-bold uppercase tracking-[0.2em]">
             What do we do?
           </h3>
 
-          <FadeInText para={para}
-            className="text-[clamp(2rem,3.6vw,3rem)] font-semibold leading-tight text-brand-primary"
+          <FadeInText
+            para={para}
+            className="text-[clamp(26px,4vw,2.6rem)] font-semibold leading-tight text-brand-primary"
           />
         </div>
 

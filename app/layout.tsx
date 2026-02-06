@@ -36,13 +36,13 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${orbitron.variable} antialiased`}
       >
         <Providers>
-          <Header />
-
           <main className="main-content">
+            <Header />
             {children}
-
             <Toaster richColors />
+
           </main>
+
           <Footer />
         </Providers>
       </body>
