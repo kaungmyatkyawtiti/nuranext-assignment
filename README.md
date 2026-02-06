@@ -29,18 +29,7 @@ npm install
 npm run dev
 ```
 
-3. Build for production
-
-```bash
-npm run build
-npm run start
-```
-
-4. Lint
-
-```bash
-npm run lint
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Project Structure (high level)
 - `app/` — Next.js app routes, pages and templates
@@ -61,22 +50,3 @@ npm run lint
 This repository does not include a license file. Add one if you intend to publish or share under a specific license.
 
 ---
-
-File: [package.json](package.json)
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
