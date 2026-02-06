@@ -37,7 +37,7 @@ export default function FadeInText({
         return (
           <motion.span
             key={i}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: stagger }}
             variants={charVariants}
           >
             {char}
