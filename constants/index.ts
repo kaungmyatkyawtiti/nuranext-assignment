@@ -2,8 +2,8 @@ import { Project, ServiceItem } from "@/types";
 import { RiFacebookCircleFill, RiInstagramLine, RiLinkedinBoxFill, RiYoutubeLine } from "@remixicon/react";
 
 export const NAV_LINKS = [
+  { label: "Cases", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Cases", href: "/cases" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -50,7 +50,7 @@ export const DUMMY_PROJECTS: Project[] = [
     category: 'App',
     title: 'Synpitarn Pico-Finance Platform',
     client: 'SYNPITARN',
-    image: '/pico.jpg',
+    image: '/img.jpg',
     color: 'bg-[#EAE8E4]'
   },
   {
@@ -58,7 +58,7 @@ export const DUMMY_PROJECTS: Project[] = [
     category: 'Website',
     title: 'The Goodlife Website: A Digital Content Hub',
     client: 'THE GOODLIFE',
-    image: '/goodlife.jpg',
+    image: '/img.jpg',
     color: 'bg-[#634CC9]'
   },
   {
@@ -66,7 +66,7 @@ export const DUMMY_PROJECTS: Project[] = [
     category: 'App',
     title: 'Creating An Intuitive Banking Experience',
     client: 'A BANK',
-    image: '/abank.jpg',
+    image: '/img.jpg',
     color: 'bg-[#5039B5]'
   },
   {
@@ -74,7 +74,7 @@ export const DUMMY_PROJECTS: Project[] = [
     category: 'Website',
     title: 'Revitalizing the Website Design and Development',
     client: 'MAHA',
-    image: '/maha.jpg',
+    image: '/img.jpg',
     color: 'bg-[#2D5A27]'
   },
   {
@@ -82,7 +82,7 @@ export const DUMMY_PROJECTS: Project[] = [
     category: 'App',
     title: 'Bridging Financial Gaps for Migrant Workers',
     client: 'SYNPITARN',
-    image: '/bridge.jpg',
+    image: '/img.jpg',
     color: 'bg-[#1E3A8A]'
   },
   {
@@ -90,7 +90,7 @@ export const DUMMY_PROJECTS: Project[] = [
     category: 'Website',
     title: 'E-Commerce Fashion Experience',
     client: 'HOTLOTZ',
-    image: '/fashion.jpg',
+    image: '/img.jpg',
     color: 'bg-[#D1D5DB]'
   },
   {
@@ -98,7 +98,7 @@ export const DUMMY_PROJECTS: Project[] = [
     category: 'App',
     title: 'Class Digital Bidding Platform',
     client: 'HOTLOTZ',
-    image: '/bidding.jpg',
+    image: '/img.jpg',
     color: 'bg-[#111827]'
   },
   {
@@ -106,9 +106,18 @@ export const DUMMY_PROJECTS: Project[] = [
     category: 'Website',
     title: 'Modern Lifestyle Brand Hub',
     client: 'THE LIFESTYLE',
-    image: '/life.jpg',
+    image: '/img.jpg',
     color: 'bg-[#7C3AED]'
   },
+  {
+    id: 9,
+    category: 'E-commerce',
+    title: 'The Goodlife Website: A Digital Content Hub',
+    client: 'THE GOODLIFE',
+    image: '/img.jpg',
+    color: 'bg-[#634CC9]'
+  },
+
 ];
 
 export const SERVICES: ServiceItem[] = [
@@ -156,7 +165,7 @@ export const DUMMY_LATEST: Project[] = [
     category: 'App',
     title: 'Synpitarn Pico-Finance Platform',
     client: 'SYNPITARN',
-    image: '/pico.jpg',
+    image: '/img.jpg',
     color: 'bg-[#EAE8E4]'
   },
   {
@@ -164,7 +173,7 @@ export const DUMMY_LATEST: Project[] = [
     category: 'Website',
     title: 'The Goodlife Website: A Digital Content Hub',
     client: 'THE GOODLIFE',
-    image: '/goodlife.jpg',
+    image: '/img.jpg',
     color: 'bg-[#634CC9]'
   },
   {
@@ -172,7 +181,7 @@ export const DUMMY_LATEST: Project[] = [
     category: 'App',
     title: 'Creating An Intuitive Banking Experience',
     client: 'A BANK',
-    image: '/abank.jpg',
+    image: '/img.jpg',
     color: 'bg-[#5039B5]'
   },
 ]
