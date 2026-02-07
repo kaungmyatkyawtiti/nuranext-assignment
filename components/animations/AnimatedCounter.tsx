@@ -1,7 +1,7 @@
 "use client";
 
-import { animate, KeyframeOptions, useInView, useIsomorphicLayoutEffect } from "motion/react";
-import { useRef } from "react";
+import { animate, KeyframeOptions, useInView } from "motion/react";
+import { useLayoutEffect, useRef } from "react";
 
 interface AnimatedCounterProps {
   from: number;
@@ -17,7 +17,7 @@ export default function AnimatedCounter({
   const targetRef = useRef<HTMLSpanElement>(null);
   const inView = useInView(targetRef, { once: true });
 
-  useIsomorphicLayoutEffect(() => {
+  useLayoutEffect(() => {
     const element = targetRef.current;
 
     if (!element) return;
