@@ -1,4 +1,4 @@
-import { Project, ServiceItem } from "@/types";
+import { Project, ServiceItem, Stat } from "@/types";
 import { RiFacebookCircleFill, RiInstagramLine, RiLinkedinBoxFill, RiYoutubeLine } from "@remixicon/react";
 
 export const NAV_LINKS = [
@@ -157,6 +157,11 @@ export const SERVICES: ServiceItem[] = [
       "Cloud Engineering & Dev Ops"
     ]
   }
+];
+
+export const LAUNCH_STATS: Stat[] = [
+  { value: 30, label: "Industries Sector" },
+  { value: 150, label: "Product Launch" },
 ];
 
 export const DUMMY_LATEST: Project[] = [

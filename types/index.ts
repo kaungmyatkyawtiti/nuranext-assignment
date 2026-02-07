@@ -12,3 +12,8 @@ export interface ServiceItem {
   description: string;
   details: string[];
 }
+
+export interface Stat {
+  value: number;
+  label: string;
+}
