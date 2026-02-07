@@ -136,11 +136,6 @@
     transition: background-color 9999s ease-in-out 0s;
   }
 
-  html.dark [data-hide-on-theme="dark"],
-  html.light [data-hide-on-theme="light"] {
-    display: none;
-  }
-
   header {
     @apply sticky top-0 w-full z-100 bg-background/90 backdrop-blur-lg;
   }
