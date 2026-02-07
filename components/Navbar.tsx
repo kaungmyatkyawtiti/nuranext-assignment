@@ -23,37 +23,37 @@ export default function Navbar() {
   useDismiss(containerRef, handleClose);
 
   return (
-    <nav className="flex-center gap-4">
+    <nav className="flex-center gap-6">
       {/* Desktop view */}
-      <div className="hidden md:block">
-        <ul className="flex gap-8">
-          {NAV_LINKS.map(link => {
-            const isActive =
-              pathname === link.href ||
-              pathname.startsWith(`${link.href}/`)
+      <ul className="hidden md:flex gap-6">
+        {NAV_LINKS.map(link => {
+          const isActive =
+            pathname === link.href ||
+            pathname.startsWith(`${link.href}/`)
 
-            return (
-              <li key={link.label} className="relative">
-                <Link
-                  href={link.href}
+          return (
+            <Link
+              key={link.label}
+              href={link.href}
+            >
+              <li
+                className={cn(
+                  "text-brand/85 hover:text-brand text-sm font-semibold uppercase hover-effect relative",
+                  isActive && "text-brand"
+                )}
+              >
+                {link.label}
+                <span
                   className={cn(
-                    "text-brand/85 hover:text-brand text-sm font-semibold uppercase hover-effect",
-                    isActive && "text-brand"
+                    "absolute left-0 -bottom-1.5 h-0.75 w-0 bg-primary-pink",
+                    isActive && "w-full"
                   )}
-                >
-                  {link.label}
-                  <span
-                    className={cn(
-                      "absolute left-0 -bottom-1.5 h-1 w-0 bg-primary-pink",
-                      isActive && "w-full"
-                    )}
-                  />
-                </Link>
+                />
               </li>
-            )
-          })}
-        </ul>
-      </div>
+            </Link>
+          )
+        })}
+      </ul>
 
       {/* Mobile view */}
       <div
