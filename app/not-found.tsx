@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function NotFoundPage() {
 
   return (
-    <main className="min-h-screen px-4 py-15">
+    <main className="min-h-screen section-container">
       <div className="text-center max-w-7xl mx-auto">
         {/* UFO Floating */}
         <FloatingUFO />

@@ -146,7 +146,7 @@
   }
 
   footer {
-    @apply fixed inset-0 z-0 min-h-screen bg-footer-background px-6 py-20;
+    @apply fixed inset-0 z-0 min-h-screen bg-footer-background section-container;
   }
 }
 
@@ -196,6 +196,10 @@
   &.error:focus {
     @apply border-destructive placeholder:text-destructive;
   }
+}
+
+@utility section-container {
+  @apply px-6 py-10 md:py-20;
 }
 
 @utility error-tooltip {

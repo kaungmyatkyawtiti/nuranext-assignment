@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { Project } from "@/types";
-import { useRef } from "react";
-import { motion, MotionValue, useScroll, useTransform } from "motion/react";
+import { motion, MotionValue, useTransform } from "motion/react";
 
 interface ShowcaseCardProps {
   project: Project;
@@ -20,22 +19,11 @@ export default function ShowcaseCard({
   range,
   targetScale
 }: ShowcaseCardProps) {
-  const container = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "start start"],
-  });
-
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
-
   const scale = useTransform(progress, range, [1, targetScale]);
+  const imageScale = useTransform(progress, range, [1.2, 1]);
 
   return (
-    <div
-      ref={container}
-      className="h-screen flex items-center justify-center sticky top-0 py-90"
-    >
+    <div className="h-screen flex items-center justify-center sticky top-0 py-90">
       <motion.div
         className="relative w-full max-w-5xl rounded-xl overflow-hidden shadow-lg border border-stone-600"
         style={{
@@ -53,6 +41,7 @@ export default function ShowcaseCard({
               src={project.image}
               alt={project.title}
               fill
+              sizes="(min-width: 768px) 50vw, 100vw"
               loading="eager"
               className="object-cover"
             />

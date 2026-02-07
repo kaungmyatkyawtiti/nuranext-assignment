@@ -8,7 +8,7 @@ const para2 =
 
 export default function AttentionToDetail() {
   return (
-    <section className="overflow-hidden min-h-screen px-6 py-20">
+    <section className="overflow-hidden min-h-screen section-container">
       <div className="mx-auto max-w-7xl relative">
         {/* Background Glow */}
         <div className="absolute inset-0 -z-10">

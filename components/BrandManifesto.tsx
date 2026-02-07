@@ -1,6 +1,6 @@
 const BrandManifesto = () => {
   return (
-    <section className="relative min-h-screen col-center overflow-hidden select-none px-6 py-20">
+    <section className="relative min-h-screen col-center overflow-hidden select-none section-container">
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         {/* Main heading */}
         <h1 className="text-[clamp(2rem,4.5vw,4.5rem)] font-medium tracking-tight text-brand-foreground leading-tight md:leading-[1.1]">

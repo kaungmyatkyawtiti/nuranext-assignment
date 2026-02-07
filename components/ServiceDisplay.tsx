@@ -16,7 +16,7 @@ const ServiceDisplay = () => {
   return (
     <section
       ref={container}
-      className='relative px-4'
+      className='relative section-container'
     >
       {DUMMY_LATEST.map((project, i) => {
         const targetScale = 1 - ((DUMMY_LATEST.length - i) * 0.05);

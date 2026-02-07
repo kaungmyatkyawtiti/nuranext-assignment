@@ -3,7 +3,7 @@ import FadeInOnScroll from "./animations/CompFadeInWrapper";
 
 const ServiceList = () => {
   return (
-    <section className="px-6 py-15">
+    <section className="section-container">
       <div className="max-w-7xl mx-auto">
         {SERVICES.map((service, ind) => (
           <FadeInOnScroll

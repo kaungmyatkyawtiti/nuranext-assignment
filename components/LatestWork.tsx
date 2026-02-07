@@ -8,7 +8,7 @@ const text = "THE LATEST";
 
 const LatestWork = () => {
   return (
-    <section className="px-6 py-20">
+    <section className="section-container">
       <div className='max-w-7xl mx-auto'>
         <div className="mb-16 text-center">
           <ScrambleText
@@ -32,6 +32,7 @@ const LatestWork = () => {
                   src={item.image}
                   alt={item.title}
                   fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   loading='eager'
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />

@@ -36,9 +36,10 @@ const CasesGrid = () => {
     },
     {} as Record<string, typeof DUMMY_PROJECTS>
   );
+  console.log("projectsByCategory", projectsByCategory)
 
   return (
-    <section className="px-6 py-10">
+    <section className="section-container">
       <div className='max-w-7xl mx-auto'>
         {/* Filter Tabs */}
         <ul className="sticky top-(--header-height) z-90 flex border-b overflow-x-auto whitespace-nowrap bg-background/90 backdrop-blur-lg">

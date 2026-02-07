@@ -7,7 +7,7 @@ const text =
 
 const LandingStats = () => {
   return (
-    <section className="relative overflow-hidden min-h-screen px-6 py-20">
+    <section className="relative overflow-hidden min-h-screen section-container">
       <div className="max-w-7xl mx-auto space-y-45">
         {/* Block 1 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-start">

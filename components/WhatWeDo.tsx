@@ -4,7 +4,7 @@ const para = "We don't just build website.\nWe help build digital products funct
 
 export default function WhatWeDo() {
   return (
-    <section className="min-h-screen px-6 py-20">
+    <section className="min-h-screen section-container">
       <div className="mx-auto max-w-7xl grid grid-cols-1 gap-14 lg:grid-cols-2 items-center">
         {/* Left: primary messaging */}
         <div className="space-y-6 md:space-y-8">
