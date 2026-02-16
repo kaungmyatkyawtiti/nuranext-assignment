@@ -43,7 +43,7 @@ export default function AnimatedCounter({
     return () => {
       controls.stop();
     }
-  }, [targetRef, inView, from, to])
+  }, [targetRef, inView, from, to, animatedOptions])
 
   return <span ref={targetRef} />;
 }

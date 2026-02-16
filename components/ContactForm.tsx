@@ -194,7 +194,7 @@ function ErrorTooltip({
       {error && (
         <motion.span
           key={shakeTrigger}
-          className="error-tooltip"
+          className="error-tooltip scroll-smooth scrollbar-hidden"
           initial={{ opacity: 0, y: -4 }}
           animate={{
             opacity: 1,

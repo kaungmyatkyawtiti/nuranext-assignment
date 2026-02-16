@@ -115,7 +115,7 @@
   }
 
   button {
-    @apply focus:outline-none;
+    @apply focus:outline-transparent;
   }
 
   body {

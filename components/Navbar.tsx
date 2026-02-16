@@ -23,7 +23,7 @@ export default function Navbar() {
   useDismiss(containerRef, handleClose);
 
   return (
-    <nav className="flex-center gap-6">
+    <nav className="flex-center gap-5">
       {/* Desktop view */}
       <ul className="hidden md:flex gap-6">
         {NAV_LINKS.map(link => {

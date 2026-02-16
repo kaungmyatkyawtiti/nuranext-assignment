@@ -11,9 +11,7 @@ const tabs = ['All', 'E-commerce', 'Website', 'App'];
 const CasesGrid = () => {
   const [selectedTab, setSelectedTab] = useState("All")
 
-  const filteredProjects = DUMMY_PROJECTS.filter(project =>
-    selectedTab === "All" || selectedTab === project.category
-  );
+  const filteredProjects = DUMMY_PROJECTS.filter(project => selectedTab === "All" || selectedTab === project.category);
 
   const categoryCounts = DUMMY_PROJECTS.reduce(
     (acc: Record<string, number>, project) => {
