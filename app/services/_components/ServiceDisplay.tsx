@@ -3,7 +3,7 @@
 import { DUMMY_LATEST } from "@/constants";
 import { useRef } from "react";
 import { useScroll } from "motion/react";
-import ShowcaseCard from "./ShowcaseCard";
+import ShowcaseCard from "@/components/ShowcaseCard";
 
 const ServiceDisplay = () => {
   const container = useRef(null);

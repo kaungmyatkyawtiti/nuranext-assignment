@@ -3,7 +3,7 @@
 import FloatingUFO from "@/components/animations/FloatingUFO";
 import InteractiveBtn from "@/components/animations/InteractiveBtn";
 import Magnetic from "@/components/animations/Magnetic";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 

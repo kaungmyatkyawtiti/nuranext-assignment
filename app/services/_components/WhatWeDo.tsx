@@ -1,4 +1,4 @@
-import FadeInText from "./animations/FadeInText"
+import FadeInText from "@/components/animations/FadeInText"
 
 const para = "We don't just build website.\nWe help build digital products functional and impactful."
 
@@ -31,4 +31,3 @@ export default function WhatWeDo() {
 
   )
 }
-

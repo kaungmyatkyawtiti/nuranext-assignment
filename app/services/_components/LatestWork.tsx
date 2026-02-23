@@ -1,8 +1,8 @@
 import { DUMMY_LATEST } from '@/constants';
 import { RiArrowLeftUpFill } from '@remixicon/react';
 import Image from "next/image"
-import ScrambleText from './animations/ScrambleText';
 import { cn } from '@/lib/utils';
+import ScrambleText from '@/components/animations/ScrambleText';
 
 const text = "THE LATEST";
 

@@ -1,77 +1,56 @@
 "use client";
 
-import z from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { RiSendPlaneFill } from "@remixicon/react";
+import { RiLoader2Fill, RiSendPlaneFill } from "@remixicon/react";
 import { cn } from "@/lib/utils";
 import { sendEmail } from "@/lib/actions/contact-email";
 import { toast } from "sonner";
-import InteractiveBtn from "./animations/InteractiveBtn";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
-
-
-const contactSchema = z.object({
-  name: z
-    .string()
-    .min(5, "Please enter your name (minimum 5 characters)")
-    .max(100, "Your name is too long"),
-
-  bussiness: z
-    .string()
-    .optional()
-    .or(z.literal("")),
-
-  phone: z
-    .string()
-    .min(5, "Please enter a valid phone number")
-    .max(20, "Phone number is too long"),
-
-  email: z
-    .email("Please enter a valid email address"),
-
-  about: z
-    .string()
-    .min(5, "Please enter your message (minimum 5 characters)")
-});
-
-export type ContactFormInputs = z.infer<typeof contactSchema>;
-
-const defaultValues = {
-  name: "",
-  bussiness: "",
-  phone: "",
-  email: "",
-  about: ""
-}
+import { contactSchema } from "@/lib/validations";
+import { ContactFormInputs } from "@/types";
+import InteractiveBtn from "@/components/animations/InteractiveBtn";
 
 export default function ContactForm() {
   const [shakeTrigger, setShakeTrigger] = useState(0);
+
+  const handleShake = () => setShakeTrigger(prev => prev + 1);
+
+  const defaultValues = {
+    name: "",
+    bussiness: "",
+    phone: "",
+    email: "",
+    about: ""
+  }
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<ContactFormInputs>({
     resolver: zodResolver(contactSchema),
-    defaultValues
+    defaultValues,
+    mode: "onSubmit",
+    reValidateMode: "onBlur"
   })
 
   const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
+    console.log("Contact submit data", data);
+
     try {
       const result = await sendEmail(data);
-      // console.log('result', result);
+      // console.log('Send email submit result', result);
       toast.success("Message sent successfully!");
-    } catch (error) {
-      console.log("Contact submit error", error)
-      toast.error("Something went wrong");
-    } finally {
-      reset(
-        defaultValues,
-        { keepErrors: true }
-      );
+      reset(defaultValues);
+    } catch (err) {
+      console.log("Send email submit error", err)
+      const errMsg = err instanceof Error
+        ? err.message
+        : "Something went wrong";
+      toast.error(errMsg);
     }
   }
 
@@ -80,7 +59,7 @@ export default function ContactForm() {
       id="contact-form"
       onSubmit={handleSubmit(
         onSubmit,
-        () => { setShakeTrigger((prev) => prev + 1) }
+        handleShake,
       )}
       className="space-y-6"
     >
@@ -169,7 +148,11 @@ export default function ContactForm() {
         type="submit"
         form="contact-form"
         className="mt-8"
+        disabled={isSubmitting}
       >
+        {isSubmitting
+          && <RiLoader2Fill className="animate-spin" />
+        }
         Send
         <RiSendPlaneFill size={20} />
       </InteractiveBtn>
@@ -196,11 +179,11 @@ function ErrorTooltip({
           key={shakeTrigger}
           className="error-tooltip scroll-smooth scrollbar-hidden"
           initial={{ opacity: 0, y: -4 }}
+          exit={{ opacity: 0, y: 4 }}
           animate={{
             opacity: 1,
             x: [0, -4, 4, -3, 3, -2, 2, 0],
           }}
-          exit={{ opacity: 0 }}
           transition={{
             duration: 0.35,
             ease: "easeInOut",

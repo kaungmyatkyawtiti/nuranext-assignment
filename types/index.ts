@@ -1,3 +1,6 @@
+import { contactSchema } from "@/lib/validations";
+import z from "zod";
+
 export interface Project {
   id: number;
   category: string;
@@ -17,3 +20,5 @@ export interface Stat {
   value: number;
   label: string;
 }
+
+export type ContactFormInputs = z.infer<typeof contactSchema>;

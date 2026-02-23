@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef, useState, ReactNode, MouseEvent } from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { motion } from 'motion/react';
 
 interface MagneticProps {
   children: ReactNode;

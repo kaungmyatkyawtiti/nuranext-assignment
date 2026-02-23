@@ -1,4 +1,4 @@
-import FadeInText from "./animations/FadeInText";
+import FadeInText from "@/components/animations/FadeInText";
 
 const para1 =
   "Every small details matter to us. Your colors, Typefaces? How does your customer service handle complaints? All of the above and More?";

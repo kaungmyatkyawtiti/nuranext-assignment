@@ -2,7 +2,7 @@
 
 import { splitString } from "@/lib/split-string";
 import { cn } from "@/lib/utils";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 type ScrambleTextProps = {
   text: string;

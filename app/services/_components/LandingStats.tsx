@@ -1,6 +1,6 @@
+import AnimatedCounter from "@/components/animations/AnimatedCounter";
+import ScrambleText from "@/components/animations/ScrambleText";
 import { LAUNCH_STATS } from "@/constants";
-import AnimatedCounter from "./animations/AnimatedCounter";
-import ScrambleText from "./animations/ScrambleText";
 
 const text =
   "We're an extension of your team. \n One goal, one team and one big product.";

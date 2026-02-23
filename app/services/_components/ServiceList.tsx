@@ -1,5 +1,5 @@
+import FadeInOnScroll from "@/components/animations/CompFadeInWrapper";
 import { SERVICES } from "@/constants";
-import FadeInOnScroll from "./animations/CompFadeInWrapper";
 
 const ServiceList = () => {
   return (

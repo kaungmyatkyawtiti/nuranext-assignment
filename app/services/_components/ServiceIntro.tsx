@@ -6,15 +6,21 @@ import { motion, useScroll, useTransform, useSpring } from "motion/react";
 export default function ServiceIntro() {
   const { scrollY } = useScroll();
 
-  const y = useTransform(scrollY, [0, 500], [0, 200]);
+  const imageY = useSpring(
+    useTransform(scrollY, [0, 500], [0, 150]),
+    { stiffness: 60, damping: 15 }
+  );
 
-  const smoothY = useSpring(y, { stiffness: 100, damping: 20 });
+  const textY = useSpring(
+    useTransform(scrollY, [0, 500], [0, 300]),
+    { stiffness: 200, damping: 30 }
+  );
 
   return (
     <section className="relative min-h-screen overflow-hidden section-container col-center">
       <motion.div
         className="absolute inset-0"
-        style={{ y: smoothY }}
+        style={{ y: imageY }}
       >
         <Image
           src="/parallex.png"
@@ -26,15 +32,17 @@ export default function ServiceIntro() {
 
       <div className="absolute inset-0 z-5 bg-black/45" />
 
-      <div className="relative z-10 text-center">
+      <motion.div
+        className="relative z-10 text-center"
+        style={{ y: textY }}
+      >
         <h2 className="text-[clamp(3rem,6vw,5rem)] font-semibold text-white">
           BOOST YOUR
         </h2>
         <h2 className="text-[clamp(3.5rem,6vw,5rem)] text-cyan-500 text-shadow-black font-semibold">
           GROWTH
         </h2>
-      </div>
+      </motion.div>
     </section>
   );
 }
-

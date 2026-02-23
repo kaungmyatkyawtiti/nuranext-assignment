@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, MotionValue, useScroll, useTransform } from 'framer-motion';
+import { motion, MotionValue, useScroll, useTransform } from 'motion/react';
 import { HTMLAttributes, useRef } from 'react';
 
 type WordRevealProps = HTMLAttributes<HTMLParagraphElement> & {
